@@ -19,42 +19,62 @@ body {
     text-align: center;
 }
 
+/* Estilos para a div com a classe "texto2" */
+.texto2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adicione essa propriedade para centralizar verticalmente também */
+}
+
 /* Estilos para o título dentro da div com a classe "texto2" */
 .texto2 h2 {
     font-size: 100px;
     color: #2a93d5;
     font-family: "Arial", sans-serif;
     font-weight: bold;
+    margin: 0; /* Remove as margens padrão para evitar espaçamentos indesejados */
 }
+
 
 /* Define o tamanho máximo para a imagem dentro da div com a classe "foto2" */
 .foto2 img {
     width: 100%;
-    height: 1080px; /* Altura desejada para a imagem */
+    height: 1080px;
+    /* Altura desejada para a imagem */
     max-width: 100%;
 }
 
 /* Define o tamanho máximo para o vídeo e o ajusta horizontalmente */
 .video iframe {
     width: 80%;
-    height: 300px; /* Altura desejada para o vídeo */
+    height: 300px;
+    /* Altura desejada para o vídeo */
     max-width: 100%;
 }
 
 /* Estilos para a div que contém três elementos lado a lado */
 .container {
-    display: flex; /* Cria um flex container */
-    justify-content: center; /* Centraliza os elementos horizontalmente */
-    flex-wrap: wrap; /* Permite que os elementos se ajustem em telas menores */
-    max-width: 100%; /* Define uma largura máxima para a div */
+    display: flex;
+    /* Cria um flex container */
+    justify-content: center;
+    /* Centraliza os elementos horizontalmente */
+    flex-wrap: wrap;
+    /* Permite que os elementos se ajustem em telas menores */
+    max-width: 100%;
+    /* Define uma largura máxima para a div */
 }
 
 /* Estilos para cada uma das caixas (elementos) dentro da div "container" */
 .box {
-    flex-basis: 30%; /* Define a largura base de cada elemento */
-    background-color: #f0f0f0; /* Define a cor de fundo da caixa */
-    padding: 10px; /* Espaçamento interno da caixa */
-    margin: 5px; /* Reduz o espaço entre os elementos */
+    flex-basis: 30%;
+    /* Define a largura base de cada elemento */
+    background-color: #f0f0f0;
+    /* Define a cor de fundo da caixa */
+    padding: 10px;
+    /* Espaçamento interno da caixa */
+    margin: 5px;
+    /* Reduz o espaço entre os elementos */
     position: relative;
     overflow: hidden;
 }
@@ -77,13 +97,17 @@ body {
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
-    background-color: #25d366; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto do botão */
+    background-color: #25d366;
+    /* Cor de fundo do botão */
+    color: #fff;
+    /* Cor do texto do botão */
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 5px; /* Borda arredondada do botão */
-    transition: background-color 0.3s ease-in-out; /* Transição suave ao mudar a cor de fundo */
+    border-radius: 5px;
+    /* Borda arredondada do botão */
+    transition: background-color 0.3s ease-in-out;
+    /* Transição suave ao mudar a cor de fundo */
 }
 
 /* Define o tamanho do ícone do WhatsApp dentro do botão */
@@ -105,8 +129,12 @@ body {
 .gallery-item {
     flex-basis: 25%;
     max-width: 250px;
-    box-sizing: border-box; /* Garante que o padding não aumente o tamanho da imagem */
-    padding: 8px; /* Adiciona um espaçamento interno */
+    box-sizing: border-box;
+    /* Garante que o padding não aumente o tamanho da imagem */
+    padding: 8px;
+    /* Adiciona um espaçamento interno */
+    position: relative;
+    overflow: hidden;
 }
 
 .gallery-item img {
@@ -114,7 +142,34 @@ body {
     height: auto;
     display: block;
     border-radius: 8px;
+    transition: transform 0.3s ease; /* Adiciona uma transição suave para o efeito de escala */
 }
+
+/* Efeito ao passar o mouse sobre as imagens da galeria */
+.gallery-item:hover img {
+    transform: scale(1.1); /* Aumenta o tamanho da imagem em 10% ao passar o mouse */
+}
+
+/* Estilos para o texto de legenda na galeria */
+.gallery-item .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente para a legenda */
+    color: #fff; /* Cor do texto da legenda */
+    padding: 8px;
+    font-size: 14px;
+    opacity: 0; /* Inicialmente a legenda estará invisível */
+    transition: opacity 0.3s ease; /* Adiciona uma transição suave para o efeito de opacidade */
+}
+
+/* Efeito ao passar o mouse sobre as imagens da galeria */
+.gallery-item:hover .caption {
+    opacity: 1; /* Torna a legenda visível ao passar o mouse */
+}
+
+
 
 @media screen and (max-width: 768px) {
     .gallery-item {
@@ -127,6 +182,45 @@ body {
         flex-basis: 100%;
     }
 }
+
+/* Resto do seu CSS existente ... */
+
+/* Resto do seu CSS existente ... */
+
+/* Estilos para o overlay */
+.gallery-item {
+    position: relative;
+    cursor: pointer; /* Muda o cursor ao passar o mouse para indicar que é clicável */
+}
+
+.overlay {
+    position: relative; /* Alterado para relative */
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.overlay img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px;
+    display: block; /* Adicionado para garantir que as imagens fiquem lado a lado */
+}
+
+.larger-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Adiciona o efeito de escala para 0 */
+    transition: transform 0.3s ease; /* Adiciona a transição suave */
+}
+
+/* Efeito ao passar o mouse sobre as imagens da galeria */
+.gallery-item:hover .larger-image {
+    transform: translate(-50%, -50%) scale(1); /* Aumenta a escala para 1 */
+}
+
+
 
 /* Estilos para a div de contato */
 .contact {
@@ -158,10 +252,25 @@ body {
     height: 250px;
     border-radius: 50%;
     border: 2px solid #2a93d5;
+    transition: transform 0.3s ease;
+    /* Adiciona uma transição suave para o efeito de crescimento */
 }
+
+/* Efeito ao passar o mouse sobre as imagens */
+.contact-links img:hover {
+    transform: scale(1.1);
+    /* Aumenta em 10% o tamanho da imagem ao passar o mouse */
+}
+
+/* Restante do seu código CSS continua abaixo... */
+
+
+
+
 
 /* Estilos para dispositivos com largura máxima de 768px (telas menores) */
 @media screen and (max-width: 768px) {
+
     /* Reduz o tamanho das imagens para telas menores */
     .contact-links img {
         width: 30px;
@@ -200,12 +309,14 @@ body {
 .box:hover .right-image {
     opacity: 1;
 }
+
 /* Estilos para a div que contém o texto "Galeria de fotos" */
 .texto2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh; /* Define a altura da div para ocupar 100% da altura da tela */
+    height: 50vh;
+    /* Define a altura da div para ocupar 100% da altura da tela */
 }
 
 /* Estilos para o título h2 dentro da div "texto2" */
@@ -220,4 +331,54 @@ body {
 .contact {
     text-align: center;
     padding: 20px;
+}
+
+/* Estilos para o rodapé */
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links img {
+    max-width: 100px; /* Ajuste a largura conforme necessário */
+    margin: 0 10px;
+}
+
+.footer-contact {
+    text-align: left;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    color: #777;
+}
+
+/* Estilos para dispositivos com largura máxima de 768px (telas menores) */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links img {
+        margin: 10px 0;
+    }
+
+    .footer-contact {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        margin-top: 10px;
+    }
 }
