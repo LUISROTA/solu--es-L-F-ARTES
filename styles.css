@@ -1,6 +1,3 @@
-
-
-
 body {
     margin: 0;
     padding: 0;
@@ -36,62 +33,36 @@ body {
 }
 
 
-.wrapper {
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-    background: skyblue;
-    margin-top: 20px;
+
+/* Estilos da div com três elementos lado a lado */
+.container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza os elementos horizontalmente */
+    flex-wrap: wrap; /* Permite que os elementos se ajustem em telas menores */
+    max-width: 1200px; /* Define uma largura máxima para a div */
 }
 
-.items {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    list-style: none; /* Removemos os marcadores da lista */
+.box {
+    flex-basis: 30%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 5px; /* Reduz o espaço entre os elementos */
 }
 
-.items li {
-    flex-basis: 20%;
-    height: 300px;
-    background: red;
-    margin: 20px;
-    border: 2px solid blue;
-    box-sizing: border-box;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.items li:hover {
-    opacity: 0.8;
-}
-
-.item-content {
+.box img {
     width: 100%;
-    height: 50px;
-    line-height: 50px;
-    background: blue;
-    text-align: center;
-    color: white;
-    font-size: 20px;
+    height: auto;
 }
 
-/* Media query para telas menores, com largura máxima de 1250px */
-@media screen and (max-width: 1250px) {
-    .items li {
-        flex-basis: 40%;
-    }
+.box p {
+    font-size: 16px;
+    margin-top: 10px;
 }
 
-/* Media query para telas ainda menores, com largura máxima de 768px */
+/* Media query para telas menores, com largura máxima de 768px */
 @media screen and (max-width: 768px) {
-    .items li {
-        flex-basis: 90%;
+    .box {
+        flex-basis: 45%; /* Reduz a largura dos elementos em telas menores */
+        margin: 5px; /* Reduz o espaço entre os elementos em telas menores */
     }
 }
-
-
