@@ -200,3 +200,24 @@ body {
 .box:hover .right-image {
     opacity: 1;
 }
+/* Estilos para a div que contém o texto "Galeria de fotos" */
+.texto2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Define a altura da div para ocupar 100% da altura da tela */
+}
+
+/* Estilos para o título h2 dentro da div "texto2" */
+.texto2 h2 {
+    font-size: 100px;
+    color: #2a93d5;
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+}
+
+/* Define o estilo para a div de classe "contact" */
+.contact {
+    text-align: center;
+    padding: 20px;
+}
