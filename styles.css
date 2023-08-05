@@ -66,3 +66,25 @@ body {
         margin: 5px; /* Reduz o espaço entre os elementos em telas menores */
     }
 }
+
+
+/* Estilização do botão do WhatsApp */
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #25d366;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.whatsapp-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
