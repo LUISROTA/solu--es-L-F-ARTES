@@ -1,0 +1,97 @@
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.foto1 img {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Defina um valor máximo para o logotipo */
+}
+
+.content {
+    max-width: 100%; /* Defina um valor máximo para a largura do conteúdo */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.texto2 {
+    text-align: center;
+}
+
+.foto2 img {
+    width: 100%;
+    height: 1080px; /* Altura desejada para a imagem */
+    max-width: 100%;
+}
+
+.video iframe {
+    width: 80%;
+    height: 300px; /* Altura desejada para o vídeo */
+    max-width: 100%;
+}
+
+
+.wrapper {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    background: skyblue;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.items {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none; /* Removemos os marcadores da lista */
+}
+
+.items li {
+    flex-basis: 20%;
+    height: 300px;
+    background: red;
+    margin: 20px;
+    border: 2px solid blue;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.items li:hover {
+    opacity: 0.8;
+}
+
+.item-content {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background: blue;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+/* Media query para telas menores, com largura máxima de 1250px */
+@media screen and (max-width: 1250px) {
+    .items li {
+        flex-basis: 40%;
+    }
+}
+
+/* Media query para telas ainda menores, com largura máxima de 768px */
+@media screen and (max-width: 768px) {
+    .items li {
+        flex-basis: 90%;
+    }
+}
+
+
