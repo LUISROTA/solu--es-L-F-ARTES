@@ -55,6 +55,8 @@ body {
     background-color: #f0f0f0; /* Define a cor de fundo da caixa */
     padding: 10px; /* Espaçamento interno da caixa */
     margin: 5px; /* Reduz o espaço entre os elementos */
+    position: relative;
+    overflow: hidden;
 }
 
 /* Define o tamanho máximo para as imagens dentro das caixas */
@@ -67,15 +69,6 @@ body {
 .box p {
     font-size: 16px;
     margin-top: 10px;
-}
-
-/* Media query para telas menores, com largura máxima de 768px */
-@media screen and (max-width: 768px) {
-    /* Reduz a largura dos elementos em telas menores */
-    .box {
-        flex-basis: 45%;
-        margin: 5px; /* Reduz o espaço entre os elementos em telas menores */
-    }
 }
 
 /* Estilização do botão do WhatsApp */
@@ -100,13 +93,7 @@ body {
     margin-right: 10px;
 }
 
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
+/* Estilos para a galeria de fotos */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -141,31 +128,31 @@ body {
     }
 }
 
-/* Define o estilo para a div de classe "contact" */
+/* Estilos para a div de contato */
 .contact {
     text-align: center;
     padding: 20px;
 }
 
-/* Define o estilo para o título h2 dentro da div de classe "contact" */
+/* Estilos para o título h2 dentro da div de contato */
 .contact h2 {
     font-size: 100px;
     color: #2a93d5;
     font-weight: bold;
 }
 
-/* Define o estilo para a div de classe "contact-links" */
+/* Estilos para a div de links de contato */
 .contact-links {
     margin-top: 20px;
 }
 
-/* Define o estilo para os links dentro da div de classe "contact-links" */
+/* Estilos para os links dentro da div de links de contato */
 .contact-links a {
     display: inline-block;
     margin: 0 10px;
 }
 
-/* Define o estilo para as imagens dentro dos links */
+/* Estilos para as imagens dentro dos links de contato */
 .contact-links img {
     width: 250px;
     height: 250px;
@@ -173,11 +160,43 @@ body {
     border: 2px solid #2a93d5;
 }
 
-/* Define o estilo para dispositivos com largura máxima de 768px (telas menores) */
+/* Estilos para dispositivos com largura máxima de 768px (telas menores) */
 @media screen and (max-width: 768px) {
     /* Reduz o tamanho das imagens para telas menores */
     .contact-links img {
         width: 30px;
         height: 30px;
     }
+}
+
+/* Estilos para o efeito de rotação nas imagens das caixas */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.left-image {
+    transform: rotateY(0);
+}
+
+.right-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(-180deg);
+    opacity: 0;
+}
+
+.box:hover .image-container {
+    transform: rotateY(180deg);
+}
+
+.box:hover .left-image {
+    opacity: 0;
+}
+
+.box:hover .right-image {
+    opacity: 1;
 }
