@@ -382,3 +382,17 @@ body {
         margin-top: 10px;
     }
 }
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Define o tamanho total para a imagem */
+    height: 400px; /* Altura desejada para a imagem */
+    overflow: hidden; /* Evita que a imagem ultrapasse o tamanho definido */
+}
+
+.box-image {
+    width: 100%; /* Ajusta a largura da imagem para preencher a div */
+    height: 100%; /* Ajusta a altura da imagem para preencher a div */
+    object-fit: cover; /* Redimensiona a imagem mantendo a proporção */
+}
