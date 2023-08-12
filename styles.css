@@ -171,7 +171,7 @@ body {
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
     .gallery-item {
         flex-basis: 50%;
     }
@@ -395,4 +395,43 @@ body {
     width: 100%; /* Ajusta a largura da imagem para preencher a div */
     height: 100%; /* Ajusta a altura da imagem para preencher a div */
     object-fit: cover; /* Redimensiona a imagem mantendo a proporção */
+}
+
+
+/* ... (seus estilos anteriores) ... */
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .box {
+        flex-basis: 100%;
+    }
+
+    .gallery-item {
+        flex-basis: 50%;
+    }
+
+    .texto2 h2 {
+        font-size: 60px;
+    }
+
+    .image-container {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-item {
+        flex-basis: 100%;
+    }
+
+    .texto2 h2 {
+        font-size: 40px;
+    }
+
+    .image-container {
+        height: 200px;
+    }
 }
